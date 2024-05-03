@@ -1,0 +1,19 @@
+- hosts: all
+  vars: 
+    package: 
+      - httpd 
+      - wget
+      - tree 
+      - git
+
+  tasks:
+  - name: install packages 
+    yum:
+      name:  "{{ package }}"
+      state: latest
+
+  - name: Restart apache
+    service:
+      name: httpd 
+      state: started 
+
