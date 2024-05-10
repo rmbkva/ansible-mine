@@ -1,0 +1,10 @@
+- name: install packages 
+  dnf:
+    name:  httpd
+    state: latest
+
+- name: Restart apache
+  service:
+    name: httpd 
+    state: started 
+
